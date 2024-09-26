@@ -1,0 +1,41 @@
+{
+  "name": "tdesign-mobile-starter",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/",
+    "prepare": "node -e \"if(require('fs').existsSync('.git')){process.exit(1)}\" || is-ci || husky install"
+  },
+  "dependencies": {
+    "less": "^4.2.0",
+    "uuid": "^10.0.0",
+    "vue": "^3.5.8",
+    "vue-router": "^4.4.5",
+    "tdesign-mobile-vue": "^1.4.2"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@types/node": "^18.14.2",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "@vue/tsconfig": "^0.5.1",
+    "eslint": "^8.34.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^9.0.10",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.4",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.8",
+    "vue-tsc": "^2.1.6"
+  },
+  "description": "I've been waiting for Tencent for a long time, but they haven't released the starter kit yet."
+
+}
