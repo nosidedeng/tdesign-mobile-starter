@@ -1,8 +1,11 @@
 <template>
   <RouterView />
 </template>
-<style lang="less" scoped>
+<style lang="less">
+* {
+  --td-grid-item-image-bg-color: rgba(255, 255, 255, 0.0);
+}
 body {
-  margin: 0 !important;
+  background-color: #f5f5f5;
 }
 </style>
