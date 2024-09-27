@@ -8,4 +8,9 @@
 body {
   background-color: #f5f5f5;
 }
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+}
 </style>
