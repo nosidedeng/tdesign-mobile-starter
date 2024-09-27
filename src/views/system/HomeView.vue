@@ -22,12 +22,21 @@
         <t-grid-item text="主导航七" :image="imgUrl" @click="handleMainNavClick(7)" />
         <t-grid-item text="主导航八" :image="imgUrl" @click="handleMainNavClick(8)" />
     </t-grid>
+
     <div class="row">
         <t-image class="image-container" :src="banner2" shape="round" style="height: 80px; width: 100vw;" fit="cover"
             position="center" />
     </div>
-    <div class="row">
-        <h1>热门课程</h1>
+
+    <div class="content">
+        <div class="row">
+            <h1 class="title">热门课程</h1>
+        </div>
+        <t-divider />
+        <div class="group">
+            <t-skeleton v-for="i in 4" :key="i" :row-col="rowCols" class="item" animation="flashed"/>
+        </div>
+
     </div>
 </template>
 <script lang="ts" setup>
@@ -43,7 +52,16 @@ const swiperList = [
     `https://img.zcool.cn/community/0187e35da804faa801209e1f315966.png?imageMogr2/auto-orient/thumbnail/x600/format/webp`,
     `${imageCdn}/swiper1.png`,
 ];
-
+const rowCols = [
+    {
+        size: '165.5px',
+        borderRadius: '12px',
+    },
+    1,
+    {
+        width: '100px',
+    },
+];
 const handleSwiperChange = (index: number, context: any) => {
     console.log('handleSwiperChange', index, context);
 };
@@ -71,5 +89,23 @@ const handleMainNavClick = (index: number) => {
 
 .t-button+.t-button {
     margin-left: 16px;
+}
+
+.content {
+    background: white;
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 16px 140px 16px;
+
+    .item {
+        width: 47%;
+        margin-bottom: 16px;
+    }
 }
 </style>
