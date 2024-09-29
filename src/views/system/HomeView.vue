@@ -30,14 +30,37 @@
 
     <div class="content">
         <div class="row">
+            <h1 class="title">推荐课程</h1>
+        </div>
+        <t-divider />
+        <t-row class="courseList">
+            <t-col span="12" class="courseItem">
+                <t-image :src="imgUrl"></t-image>
+                <span class="courseName">这里是一段很长的文本，如果超过两行将会显示为省略号。这样可以保持布局的整洁，同时用户可以看到完整内容的一部分。</span>
+            </t-col>
+            <t-col span="12" class="courseItem">
+                <t-image :src="imgUrl"></t-image>
+                <span class="courseName">这里是一段很长的文本，如果超过两行将会显示为省略号。这样可以保持布局的整洁，同时用户可以看到完整内容的一部分。</span>
+            </t-col>
+            <t-col span="12" class="courseItem">
+                <t-image :src="imgUrl"></t-image>
+                <span class="courseName">这里是一段很长的文本，如果超过两行将会显示为省略号。这样可以保持布局的整洁，同时用户可以看到完整内容的一部分。</span>
+            </t-col>
+            <t-col span="12" class="courseItem">
+                <t-image :src="imgUrl"></t-image>
+                <span class="courseName">这里是一段很长的文本，如果超过两行将会显示为省略号。这样可以保持布局的整洁，同时用户可以看到完整内容的一部分。</span>
+            </t-col>
+        </t-row>
+        <div class="row">
             <h1 class="title">热门课程</h1>
         </div>
         <t-divider />
         <div class="group">
-            <t-skeleton v-for="i in 4" :key="i" :row-col="rowCols" class="item" animation="flashed"/>
+            <t-skeleton v-for="i in 4" :key="i" :row-col="rowCols" class="item" animation="flashed" />
         </div>
 
     </div>
+    <div class="tabbar"></div>
 </template>
 <script lang="ts" setup>
 import imgUrl from '@/assets/avatar.jpg';
@@ -101,11 +124,30 @@ const handleMainNavClick = (index: number) => {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0 16px 140px 16px;
+    padding: 0 16px 16px 16px;
 
     .item {
         width: 47%;
         margin-bottom: 16px;
     }
+}
+
+.courseList {
+    padding-bottom: 16px;
+}
+
+.courseItem {
+    padding: 10px;
+}
+
+.courseName {
+    display: block;
+    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 </style>
